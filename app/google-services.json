@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "480331229019",
+    "firebase_url": "https://covid-19-helpline-for-poor.firebaseio.com",
+    "project_id": "covid-19-helpline-for-poor",
+    "storage_bucket": "covid-19-helpline-for-poor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480331229019:android:254774fa8878f3b9041c7e",
+        "android_client_info": {
+          "package_name": "com.example.covid_19helplineforpoor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "480331229019-tjd19a9eevadh85peq38jngdbivjk0pu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.covid_19helplineforpoor",
+            "certificate_hash": "36dff36c4236e3d0a8a681505a46a9b351504550"
+          }
+        },
+        {
+          "client_id": "480331229019-7f6j0l4i0tj7ebd17sud9ldj41lnt6kc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8Hmyf7V3Ja2m6pVGZ1se4LF15Plg1JYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "480331229019-7f6j0l4i0tj7ebd17sud9ldj41lnt6kc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
