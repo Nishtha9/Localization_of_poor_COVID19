@@ -10,15 +10,15 @@
         android:id="@+id/getInfo"
         android:layout_width="349dp"
         android:layout_height="80dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
         android:onClick="btnClicked"
         android:text="GET INFORMATION ABOUT POOR FAMILIES"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/giveInfo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.508" />
+        app:layout_constraintVertical_bias="0.544" />
 
     <Button
         android:id="@+id/giveInfo"
@@ -32,4 +32,14 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/getInfo" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="423dp"
+        android:layout_height="10dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/giveInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/getInfo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

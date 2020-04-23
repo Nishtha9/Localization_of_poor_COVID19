@@ -1,12 +1,17 @@
 package com.example.covid_19helplineforpoor;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -41,11 +46,26 @@ public class getInfo extends AppCompatActivity {
 
     }
 
+    public void reset(View view)
+    {
+        Log.i("reset", " reset should be performed");
+        ((EditText)findViewById(R.id.Name)).setText("");
+        ((EditText)findViewById(R.id.number)).setText("");
+        ((EditText)findViewById(R.id.address)).setText("");
+        ((EditText)findViewById(R.id.pin)).setText("");
+        ((EditText)findViewById(R.id.district)).setText("");
+        ((EditText)findViewById(R.id.state)).setText("");
+        ((EditText)findViewById(R.id.area)).setText("");
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_info);
         details = new Details();
         ref= FirebaseDatabase.getInstance().getReference().child("Details");//table name=Details
+
     }
 }
