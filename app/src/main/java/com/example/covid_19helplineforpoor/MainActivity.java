@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else if (button_text.equals("Give Information about poor family"))
         {
+            //Edit the code to redirect to interface 2
             //Intent mass = new Intent(this,giveInfo.class);
             //startActivity(mass);
 

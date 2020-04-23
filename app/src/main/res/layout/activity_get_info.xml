@@ -32,11 +32,13 @@
         android:id="@+id/Name"
         android:layout_width="348dp"
         android:layout_height="41dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name of a family member"
-        app:layout_constraintStart_toStartOf="@+id/number"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText

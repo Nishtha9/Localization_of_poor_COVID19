@@ -7,18 +7,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/giveInfo"
-        android:layout_width="350dp"
-        android:layout_height="83dp"
-        android:layout_marginTop="388dp"
-        android:onClick="btnClicked"
-        android:text="Give Information about poor family"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="@+id/giveInfo"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/giveInfo"
+        android:id="@+id/getInfo"
         android:layout_width="349dp"
         android:layout_height="80dp"
         android:layout_marginStart="16dp"
@@ -26,6 +15,20 @@
         android:onClick="btnClicked"
         android:text="GET INFORMATION ABOUT POOR FAMILIES"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/giveInfo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/giveInfo" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.508" />
+
+    <Button
+        android:id="@+id/giveInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="208dp"
+        android:text="Give Information about poor family"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/getInfo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
