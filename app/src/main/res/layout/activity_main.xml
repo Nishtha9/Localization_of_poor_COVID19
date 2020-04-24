@@ -23,13 +23,12 @@
         android:id="@+id/giveInfo"
         android:layout_width="324dp"
         android:layout_height="87dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="10dp"
         android:background="@android:color/holo_blue_dark"
         android:onClick="btnClicked"
         android:text="Give us location of the people in need of relief funds"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.425"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -37,7 +36,7 @@
         android:id="@+id/textView2"
         android:layout_width="415dp"
         android:layout_height="4dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="50dp"
         android:background="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,48 +46,51 @@
         android:id="@+id/textView11"
         android:layout_width="330dp"
         android:layout_height="59dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50dp"
         android:background="#00FFFFFF"
+        android:paddingLeft="10sp"
         android:text="Help us help them! "
         android:textColor="@android:color/black"
-        android:textSize="36sp"
-        app:layout_constraintStart_toStartOf="@+id/getInfo"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView13"
         android:layout_width="312dp"
         android:layout_height="91dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="50dp"
         android:background="#68FFFFFF"
         android:paddingLeft="5dp"
         android:text="Extending a hand to help someone has more value than joining two for prayer."
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="@+id/getInfo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="402dp"
         android:layout_height="4dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="50dp"
         android:background="@color/common_google_signin_btn_text_dark_focused"
         android:text="TextView"
-        app:layout_constraintTop_toBottomOf="@+id/giveInfo"
-        tools:layout_editor_absoluteX="4dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/giveInfo" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="290dp"
         android:layout_height="57dp"
-        android:layout_marginBottom="92dp"
+        android:layout_marginTop="50dp"
         android:background="@android:color/holo_blue_dark"
         android:text="Our Helpers, Our Heros"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
