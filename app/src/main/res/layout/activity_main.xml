@@ -4,27 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/help">
+    android:background="@drawable/help"
+    tools:context=".MainActivity">
 
     <Button
         android:id="@+id/getInfo"
         android:layout_width="349dp"
         android:layout_height="80dp"
-        android:background="@android:color/holo_blue_light"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
         android:onClick="btnClicked"
         android:text="Get information about the families in need in your area"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
         android:id="@+id/giveInfo"
         android:layout_width="324dp"
         android:layout_height="87dp"
         android:layout_marginTop="10dp"
-        android:background="@android:color/holo_blue_dark"
+        android:background="@drawable/button"
         android:onClick="btnClicked"
         android:text="Give us location of the people in need of relief funds"
         android:textSize="18sp"
@@ -44,31 +45,17 @@
 
     <TextView
         android:id="@+id/textView11"
-        android:layout_width="330dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="50dp"
-        android:background="#00FFFFFF"
+        android:layout_width="343dp"
+        android:layout_height="102dp"
+        android:layout_marginTop="40dp"
+        android:background="#7FFFFFFF"
         android:paddingLeft="10sp"
-        android:text="Help us help them! "
+        android:text="If you have families or people in your area who do not have access to food during these trying times, let us know their details by clicking below"
         android:textColor="@android:color/black"
-        android:textSize="34sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="312dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="50dp"
-        android:background="#68FFFFFF"
-        android:paddingLeft="5dp"
-        android:text="Extending a hand to help someone has more value than joining two for prayer."
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="22sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView15"
@@ -85,11 +72,40 @@
         android:id="@+id/button3"
         android:layout_width="290dp"
         android:layout_height="57dp"
-        android:layout_marginTop="50dp"
-        android:background="@android:color/holo_blue_dark"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
         android:text="Our Helpers, Our Heros"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="340dp"
+        android:layout_height="95dp"
+        android:layout_marginTop="35dp"
+        android:background="#9AFFFFFF"
+        android:paddingLeft="10sp"
+        android:text="If you're part of an NGO or a Volunteer looking to provide food and essentials to those in need, click below to localize them in you area"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="335dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="20dp"
+        android:background="#7FFFFFFF"
+        android:text="Tell us about your contribution to the poor below during Covid-19 pandemic"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 

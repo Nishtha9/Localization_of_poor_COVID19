@@ -32,7 +32,6 @@ public class getInfo extends AppCompatActivity {
         details.setName(name.trim());
         details.setNum(num);
         details.setAddress(address.trim());
-
         //Area, District and State are saved in lowercase to avoid faulty comparisons
         //When retrieving data, compare after converting to lower case
 

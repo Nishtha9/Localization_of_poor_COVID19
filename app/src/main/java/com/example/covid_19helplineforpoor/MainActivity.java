@@ -15,15 +15,15 @@ public class MainActivity extends AppCompatActivity {
         if(view.getId()== R.id.getInfo)
         {
             //Edit the code to redirect to interface 2
-            //Intent mass = new Intent(this,giveInfo.class);
-            //startActivity(mass);
-            Log.i("get info", " button was clicked");
+            Intent mass = new Intent(this,giveInfo.class);
+            startActivity(mass);
+            //Log.i("get info", " button was clicked");
         }
         else if (view.getId()== R.id.giveInfo)
         {
             Intent goToGetInfo = new Intent(this,getInfo.class);
             startActivity(goToGetInfo);
-            Log.i("give info", " button was clicked");
+            //Log.i("give info", " button was clicked");
         }
     }
 
