@@ -1,112 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/help"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/getInfo"
-        android:layout_width="349dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button"
-        android:onClick="btnClicked"
-        android:text="Get information about the families in need in your area"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/help"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/giveInfo"
-        android:layout_width="324dp"
-        android:layout_height="87dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button"
-        android:onClick="btnClicked"
-        android:text="Give us location of the people in need of relief funds"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+        <Button
+            android:id="@+id/getInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:onClick="btnClicked"
+            android:text="Get information about the families in need in your area"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="415dp"
-        android:layout_height="4dp"
-        android:layout_marginTop="50dp"
-        android:background="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/getInfo" />
+        <Button
+            android:id="@+id/giveInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:onClick="btnClicked"
+            android:paddingLeft="5dp"
+            android:text="Give us location of the people in need of relief funds"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="343dp"
-        android:layout_height="102dp"
-        android:layout_marginTop="40dp"
-        android:background="#7FFFFFFF"
-        android:paddingLeft="10sp"
-        android:text="If you have families or people in your area who do not have access to food during these trying times, let us know their details by clicking below"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="415dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="50dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/getInfo" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="402dp"
-        android:layout_height="4dp"
-        android:layout_marginTop="50dp"
-        android:background="@color/common_google_signin_btn_text_dark_focused"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/giveInfo" />
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="#7FFFFFFF"
+            android:paddingLeft="10sp"
+            android:text="If you have families or people in your area who do not have access to food during these trying times, let us know their details by clicking below"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="290dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/button"
-        android:text="Our Helpers, Our Heros"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="402dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="50dp"
+            android:background="@color/common_google_signin_btn_text_dark_focused"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/giveInfo" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="340dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="35dp"
-        android:background="#9AFFFFFF"
-        android:paddingLeft="10sp"
-        android:text="If you're part of an NGO or a Volunteer looking to provide food and essentials to those in need, click below to localize them in you area"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:text="Our Helpers, Our Heros"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="335dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="20dp"
-        android:background="#7FFFFFFF"
-        android:text="Tell us about your contribution to the poor below during Covid-19 pandemic"
-        android:textColor="@android:color/black"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.447"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="75dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="75dp"
+            android:layout_marginRight="75dp"
+            android:background="#9AFFFFFF"
+            android:paddingLeft="10sp"
+            android:text="If you're part of an NGO or a Volunteer looking to provide food and essentials to those in need, click below to localize them in you area"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#7FFFFFFF"
+            android:text="Tell us about your contribution to the poor below during Covid-19 pandemic"
+            android:textColor="@android:color/black"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.447"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

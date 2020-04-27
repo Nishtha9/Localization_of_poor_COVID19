@@ -36,26 +36,36 @@ public class giveInfo extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                System.out.println("trigger 1");
                 ref = FirebaseDatabase.getInstance().getReference().child("Details");
                 ref.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        System.out.println("trigger 2");
                         String state= ((EditText) findViewById(R.id.state)).getText().toString();
                         final String district= ((EditText) findViewById(R.id.district)).getText().toString();
-                        String area= ((EditText) findViewById(R.id.area)).getText().toString();
-
                         Query q_State=ref.orderByChild("state").equalTo(state.toLowerCase());
                         q_State.addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                System.out.println("trigger 3");
                                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                                    if (district.isEmpty())
-                                        ((TextView)findViewById(R.id.textView19)).append(ds.getValue().toString()+"\n");
-                                    else {
-                                        String dis = ((HashMap<String, String>) ds.getValue()).get("district");
-                                        if (dis.equals(district.toLowerCase())) {
-                                            ((TextView) findViewById(R.id.textView19)).append(ds.getValue().toString() + "\n");
-                                        }
+
+                                    System.out.println("trigger 4");
+                                    if ((!district.isEmpty() && ((HashMap<String, String>) ds.getValue()).get("district").equals(district.toLowerCase())) || (district.isEmpty()))
+                                    {
+                                        //Zoom, horiz scroll
+                                        System.out.println("trigger 5");
+                                        TextView target=(TextView)findViewById(R.id.info_text);
+                                        HashMap hm=(HashMap)ds.getValue();
+                                        target.setTextSize(16);
+                                        target.append("\n");
+                                        target.append("Name: "+hm.get("name")+"\n"+"Number of family members:"+hm.get("num")+"\n"
+                                        + "Address:" + hm.get("address")+"\n"+"Pin Code:"+hm.get("pin"));
+                                        target.append("\n");
+                                        target.invalidate();
+                                        target.requestLayout();
+
                                     }
                                 }
                             }
