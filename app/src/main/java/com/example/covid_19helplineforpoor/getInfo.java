@@ -57,6 +57,12 @@ public class getInfo extends AppCompatActivity {
 
     }
 
+    public void openMap(View view){
+            Intent MAP = new Intent(this,MapsActivity.class);
+            startActivity(MAP);
+
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
