@@ -19,6 +19,7 @@ public class getInfo extends AppCompatActivity {
 
     Details details;
     DatabaseReference ref;
+    Double lat,lng;
 
     public void submit(View view){
         String name=((EditText)findViewById(R.id.Name)).getText().toString();
@@ -35,6 +36,13 @@ public class getInfo extends AppCompatActivity {
         //Area, District and State are saved in lowercase to avoid faulty comparisons
         //When retrieving data, compare after converting to lower case
 
+
+        if (lat!=null && lng!=null)
+        {
+            System.out.println("4lat:"+lat+"lng:"+lng);
+            details.setLatitude(lat);
+            details.setLongitude(lng);
+        }
         details.setArea(area.toLowerCase().trim());
         details.setPin(pin);
         details.setDistrict(district.toLowerCase().trim());
@@ -57,9 +65,22 @@ public class getInfo extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        lat = data.getDoubleExtra("latitude",28.632429);
+        lng = data.getDoubleExtra("longitude",77.218788);
+        System.out.println("3lat: "+lat+",lng:"+lng);
+    }
+
     public void openMap(View view){
             Intent MAP = new Intent(this,MapsActivity.class);
-            startActivity(MAP);
+        String area=((EditText)findViewById(R.id.area)).getText().toString();
+        String pin=((EditText)findViewById(R.id.pin)).getText().toString();
+        String district=((EditText)findViewById(R.id.district)).getText().toString();
+            MAP.putExtra("address values",area+" "+district+" "+pin);
+            startActivityForResult(MAP,1000);
 
     }
 

@@ -8,6 +8,8 @@ public class Details {
     private Integer pin;
     private  String district;
     private  String state;
+    private Double latitude;
+    private Double longitude;
     //image and gps location to be added
 
      public Details()
@@ -69,5 +71,21 @@ public class Details {
 
     public void setState(String state) {
         this.state = state;
+    }
+
+    public Double getLatitude(){
+         return latitude;
+    }
+
+    public void setLatitude(Double lat) {
+        this.latitude = lat;
+    }
+
+    public Double getLongitude(){
+         return longitude;
+    }
+
+    public void setLongitude(Double lng) {
+        this.longitude = lng;
     }
 }

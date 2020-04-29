@@ -16,13 +16,12 @@
         android:id="@+id/area"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/pin"
-        app:layout_constraintTop_toBottomOf="@+id/location" />
+        app:layout_constraintStart_toStartOf="@+id/address"
+        app:layout_constraintTop_toBottomOf="@+id/address" />
 
     <EditText
         android:id="@+id/state"
@@ -34,6 +33,8 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/district"
         app:layout_constraintTop_toBottomOf="@+id/district" />
 
     <EditText
@@ -57,7 +58,7 @@
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/district"
+        app:layout_constraintStart_toStartOf="@+id/area"
         app:layout_constraintTop_toBottomOf="@+id/area" />
 
     <EditText
@@ -69,7 +70,7 @@
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/state"
+        app:layout_constraintStart_toStartOf="@+id/pin"
         app:layout_constraintTop_toBottomOf="@+id/pin" />
 
     <EditText
@@ -101,14 +102,12 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="28dp"
         android:onClick="submit"
         android:text="Submit"
         android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/state" />
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <TextView
         android:id="@+id/textView"
@@ -117,7 +116,7 @@
         android:layout_marginTop="28dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="Name of a family member"
+        android:text="Name of a family member*"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
@@ -133,7 +132,7 @@
         android:layout_marginTop="20dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="Number of members"
+        android:text="Number of members*"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
@@ -149,7 +148,7 @@
         android:layout_marginTop="16dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="Address"
+        android:text="Address*"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
@@ -161,46 +160,46 @@
     <TextView
         android:id="@+id/textView5"
         android:layout_width="121dp"
-        android:layout_height="42dp"
+        android:layout_height="43dp"
         android:layout_marginTop="24dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="GPS Location"
+        android:text="GPS Location(Optional)"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="120dp"
-        android:layout_height="37dp"
-        android:layout_marginTop="24dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="12dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="Area/Locality/Sector"
+        android:text="Area/Locality/Sector*"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@+id/area"
-        app:layout_constraintHorizontal_bias="0.096"
-        app:layout_constraintStart_toStartOf="@+id/textView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="100dp"
         android:layout_height="23dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="36dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="PIN Code"
+        android:text="PIN Code*"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
         app:layout_constraintEnd_toStartOf="@+id/pin"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
@@ -208,10 +207,10 @@
         android:id="@+id/textView8"
         android:layout_width="96dp"
         android:layout_height="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="44dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="District"
+        android:text="District*"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
@@ -227,7 +226,7 @@
         android:layout_marginTop="40dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="State"
+        android:text="State*"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
@@ -239,16 +238,16 @@
     <TextView
         android:id="@+id/textView10"
         android:layout_width="123dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="28dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="32dp"
         android:paddingLeft="10dp"
         android:paddingRight="5dp"
-        android:text="Image of Family"
+        android:text="Image of Family(Optional)"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@android:color/black"
         android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
         android:id="@+id/button2"
@@ -256,50 +255,50 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="60dp"
         android:onClick="reset"
         android:text="Reset"
         android:textSize="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.322"
+        app:layout_constraintHorizontal_bias="0.298"
         app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/state" />
+        app:layout_constraintTop_toBottomOf="@+id/choose_img" />
 
     <Button
         android:id="@+id/choose_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="52dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="20dp"
         android:text="Upload"
         android:textSize="16dp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/state" />
+        app:layout_constraintTop_toBottomOf="@+id/location" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="93dp"
         android:layout_height="84dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="176dp"
+        android:layout_marginRight="176dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/state"
-        app:layout_constraintTop_toBottomOf="@+id/state"
+        app:layout_constraintStart_toStartOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/location"
         app:srcCompat="@android:drawable/ic_menu_gallery" />
 
     <Button
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="148dp"
+        android:layout_marginRight="148dp"
         android:onClick="openMap"
         android:text="Open in Maps"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/area"
-        app:layout_constraintTop_toBottomOf="@+id/address" />
+        app:layout_constraintTop_toBottomOf="@+id/state" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
