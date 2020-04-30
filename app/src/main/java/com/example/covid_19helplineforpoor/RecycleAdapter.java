@@ -111,8 +111,8 @@ class ViewHolder extends RecyclerView.ViewHolder {
                         .load(uri)
                         .fitCenter()
                         .diskCacheStrategy(DiskCacheStrategy.ALL)         //ALL or NONE as your requirement
-                        .thumbnail(Glide.with(holder.itemView.getContext()).load(R.drawable.help))
-                        .error(R.drawable.help)
+                        .thumbnail(Glide.with(holder.itemView.getContext()).load(R.drawable.noimg))
+                        .error(R.drawable.noimg)
                         .into(holder.itemImage);
             }
         }).addOnFailureListener(new OnFailureListener() {
