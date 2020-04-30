@@ -24,14 +24,7 @@ import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
-    private static final LatLng PERTH = new LatLng(-31.952854, 115.857342);
-    private static final LatLng SYDNEY = new LatLng(-33.87365, 151.20689);
-    private static final LatLng BRISBANE = new LatLng(-27.47093, 153.0235);
 
-
-    private Marker mPerth;
-    private Marker mSydney;
-    private Marker mBrisbane;
 
     private GoogleMap mMap;
 
@@ -70,7 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(address, zoomLevel));
         } else {
             String strAddress = intent.getExtras().getString("address values");
-            if (strAddress != null) {
+            if (strAddress.length()>0) {
                 address = getLocationFromAddress(this, strAddress);
             }
             float zoomLevel = (float) 15.0;

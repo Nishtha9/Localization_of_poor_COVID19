@@ -79,8 +79,11 @@ public class giveInfo extends AppCompatActivity {
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                                 //System.out.println("trigger 3");
                                 int count=(int)dataSnapshot.getChildrenCount();
+                                String keys[]=new String[count];
                                 String title[]=new String[count];
                                 String details[]=new String[count];
+                                double lat[]=new double[count];
+                                double lng[]=new double[count];
                                 int x=0;
                                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
 
@@ -88,11 +91,15 @@ public class giveInfo extends AppCompatActivity {
                                     if (x<count&& (!district.isEmpty() && ((HashMap<String, String>) ds.getValue()).get("district").equals(district.toLowerCase())) || (district.isEmpty()))
                                     {
                                         final HashMap hm=(HashMap)ds.getValue();
+                                        System.out.println(hm);
+                                        keys[x]=ds.getKey();
                                         title[x]="Name:"+hm.get("name");
                                         details[x]="Number of members:"+hm.get("num")+"\n"
                                             + "Address:" + hm.get("address")+"\n"+"Pin Code:"+hm.get("pin");
+                                        lat[x]=(hm.get("latitude")==null)?-1:(Double)hm.get("latitude");
+                                        lng[x]=(hm.get("longitude")==null)?-1:(Double)hm.get("longitude");
                                         x++;
-                                        showData(title,details);
+                                        showData(keys,title,details,lat,lng);
                                     }
                                 }
                             }
@@ -115,14 +122,14 @@ public class giveInfo extends AppCompatActivity {
         });
     }
 
-    public void showData(String[] title, String[] details)
+    public void showData(String keys[],String[] title, String[] details, double lat[], double lng[])
     {
         recyclerView = findViewById(R.id.my_recycler_view);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new RecycleAdapter(title,details);
+        adapter = new RecycleAdapter(keys,title,details,lat,lng);
         recyclerView.setAdapter(adapter);
 
     }
