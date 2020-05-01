@@ -164,7 +164,7 @@
         android:layout_width="121dp"
         android:layout_height="43dp"
         android:layout_marginTop="24dp"
-        android:paddingLeft="10dp"
+        android:paddingLeft="0dp"
         android:paddingRight="5dp"
         android:text="GPS Location(Optional)"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
@@ -301,6 +301,18 @@
         android:onClick="openMap"
         android:text="Open in Maps"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/state" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="116dp"
+        android:layout_height="54dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="(Drag  the marker to the desired location)"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/location"
         app:layout_constraintTop_toBottomOf="@+id/state" />
 
 

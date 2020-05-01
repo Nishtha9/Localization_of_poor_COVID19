@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import java.lang.reflect.Field;
+import java.nio.file.ProviderNotFoundException;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
         {
             Intent goToGetInfo = new Intent(this,getInfo.class);
             startActivity(goToGetInfo);
+            //Log.i("give info", " button was clicked");
+        }
+        else if (view.getId()== R.id.providerInfo)
+        {
+            Intent goToProvInfo = new Intent(this, getProvider.class);
+            startActivity(goToProvInfo);
             //Log.i("give info", " button was clicked");
         }
     }

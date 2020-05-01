@@ -52,50 +52,55 @@ public class getInfo extends AppCompatActivity {
         int pin=Integer.parseInt(((EditText)findViewById(R.id.pin)).getText().toString());
         String district=((EditText)findViewById(R.id.district)).getText().toString();
         String state=((EditText)findViewById(R.id.state)).getText().toString();
+        if (name.equals("")||address.equals("")||area.equals("")||district.equals("")||state.equals("")||num==0||pin==0)
+            Toast.makeText(getApplicationContext() , "Please fill up all required fields", Toast.LENGTH_LONG).show();
         //Add image and GPS
-        details.setName(name.trim());
-        details.setNum(num);
-        details.setAddress(address.trim());
-        //Area, District and State are saved in lowercase to avoid faulty comparisons
-        if (lat!=null && lng!=null)
+        else
         {
-            System.out.println("4lat:"+lat+"lng:"+lng);
-            details.setLatitude(lat);
-            details.setLongitude(lng);
+            details.setName(name.trim());
+            details.setNum(num);
+            details.setAddress(address.trim());
+            //Area, District and State are saved in lowercase to avoid faulty comparisons
+            if (lat!=null && lng!=null)
+            {
+                System.out.println("4lat:"+lat+"lng:"+lng);
+                details.setLatitude(lat);
+                details.setLongitude(lng);
+            }
+            details.setArea(area.toLowerCase().trim());
+            details.setPin(pin);
+            details.setDistrict(district.toLowerCase().trim());
+            details.setState(state.toLowerCase().trim());
+            DatabaseReference pushRef=ref.push();
+            pushRef.setValue(details);
+            String pushId=pushRef.getKey();
+           //ref.push().setValue(details);
+            //Storing Image*/
+            ImageView imageView=(ImageView)findViewById(R.id.imageView);
+            imageView.setDrawingCacheEnabled(true);
+            imageView.buildDrawingCache();
+            Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+            byte[] data = baos.toByteArray();
+            StorageReference imageRef = mStorageRef.child(pushId);
+            UploadTask uploadTask = imageRef.putBytes(data);
+            uploadTask.addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    // Handle unsuccessful uploads
+                    System.out.println("Image upload NOT successful");
+                }
+            }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    //System.out.println(taskSnapshot.getMetadata()); //contains file metadata such as size, content-type, etc.
+                    System.out.println("Image upload successful");
+                    // ...
+                }
+            });
+            Toast.makeText(getApplicationContext() , "data insertion was successful", Toast.LENGTH_LONG).show();
         }
-        details.setArea(area.toLowerCase().trim());
-        details.setPin(pin);
-        details.setDistrict(district.toLowerCase().trim());
-        details.setState(state.toLowerCase().trim());
-        DatabaseReference pushRef=ref.push();
-        pushRef.setValue(details);
-        String pushId=pushRef.getKey();
-       //ref.push().setValue(details);
-        //Storing Image*/
-        ImageView imageView=(ImageView)findViewById(R.id.imageView);
-        imageView.setDrawingCacheEnabled(true);
-        imageView.buildDrawingCache();
-        Bitmap bitmap = ((BitmapDrawable) imageView.getDrawable()).getBitmap();
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] data = baos.toByteArray();
-        StorageReference imageRef = mStorageRef.child(pushId);
-        UploadTask uploadTask = imageRef.putBytes(data);
-        uploadTask.addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle unsuccessful uploads
-                System.out.println("Image upload NOT successful");
-            }
-        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-            @Override
-            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                //System.out.println(taskSnapshot.getMetadata()); //contains file metadata such as size, content-type, etc.
-                System.out.println("Image upload successful");
-                // ...
-            }
-        });
-        Toast.makeText(getApplicationContext() , "data insertion was successful", Toast.LENGTH_LONG).show();
 
     }
 
