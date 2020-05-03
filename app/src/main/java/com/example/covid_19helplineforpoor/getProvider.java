@@ -97,7 +97,8 @@ public class getProvider extends AppCompatActivity implements DatePickerDialog.O
         PI=new ProviderInfo();
         String name=((EditText)findViewById(R.id.editText)).getText().toString();
         String date=((EditText)findViewById(R.id.editText3)).getText().toString();
-        if (name.equals("")|| date.equals("") || ((ImageView)findViewById(R.id.imageView2)).getTag().equals(null))
+        System.out.println("--------------------TAg="+String.valueOf(((ImageView)findViewById(R.id.imageView2)).getTag()));
+        if (name.equals("")|| date.equals("")  || ((ImageView)findViewById(R.id.imageView2)).getTag().equals("null"))
         {
             Toast.makeText(getApplicationContext() , "Please fill up all required fields", Toast.LENGTH_LONG).show();
         }
@@ -179,6 +180,7 @@ public class getProvider extends AppCompatActivity implements DatePickerDialog.O
             try {
                 ImageView imageView = (ImageView) findViewById(R.id.imageView2);
                 imageView.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+                imageView.setTag(picturePath);
                 System.out.println(picturePath);
             }catch(Exception e)
             {
