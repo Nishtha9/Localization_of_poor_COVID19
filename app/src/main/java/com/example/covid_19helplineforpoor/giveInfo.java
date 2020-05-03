@@ -95,7 +95,10 @@ public class giveInfo extends AppCompatActivity {
                                         keys[x]=ds.getKey();
                                         title[x]="Name:"+hm.get("name");
                                         details[x]="Number of members:"+hm.get("num")+"\n"
-                                            + "Address:" + hm.get("address")+"\n"+"Pin Code:"+hm.get("pin");
+                                            + "Address:" + hm.get("address")+",\n"
+                                                +"\t\t"+hm.get("area")+",\n"
+                                                +"\t\t"+hm.get("district")+"\n"
+                                                +"Pin Code:"+hm.get("pin");
                                         lat[x]=(hm.get("latitude")==null)?-1:(Double)hm.get("latitude");
                                         lng[x]=(hm.get("longitude")==null)?-1:(Double)hm.get("longitude");
                                         x++;
